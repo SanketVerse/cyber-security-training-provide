@@ -26,16 +26,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Branding */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative w-12 h-12 flex-shrink-0 animate-glow-pulse">
-                <Image
-                  src="/logo2.png"
-                  alt="I AM CYBER SOLDIER Logo"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain rounded-xl border border-primary/20 shadow-lg"
-                />
-                <div className="absolute inset-0 rounded-xl bg-primary/10 blur-sm -z-10" />
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <div className="absolute inset-0 rounded-xl bg-primary/10 backdrop-blur-[1px] border border-primary/20 shadow-lg shadow-primary/5 group-hover:border-primary/40 transition-all" />
+                <div className="relative w-full h-full p-1.5 flex items-center justify-center">
+                  <Image
+                    src="/logo2.png"
+                    alt="I AM CYBER SOLDIER Logo"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-contain"
+                    style={{ imageRendering: '-webkit-optimize-contrast' }}
+                  />
+                </div>
               </div>
               <span className="font-cyber text-sm font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
                 I AM CYBER SOLDIER

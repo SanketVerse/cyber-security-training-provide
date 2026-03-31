@@ -57,18 +57,22 @@ export function Navbar() {
         {/* Logo & Brand */}
         <div className="flex lg:flex-1">
           <Link href="/" className="flex items-center gap-3 group">
-            {/* Logo Image */}
-            <div className="relative w-14 h-14 flex-shrink-0 animate-glow-pulse group-hover:scale-110 transition-transform duration-500">
-              <Image
-                src="/logo2.png"
-                alt="I AM CYBER SOLDIER Logo"
-                width={56}
-                height={56}
-                className="w-full h-full object-contain rounded-xl border border-primary/30 shadow-2xl"
-                priority
-              />
-              {/* Glow ring behind logo */}
-              <div className="absolute inset-0 rounded-xl bg-primary/20 blur-md -z-10 group-hover:bg-primary/40 transition-all duration-300" />
+            {/* Logo Image Frame */}
+            <div className="relative w-14 h-14 flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/20 via-cyan-500/10 to-primary/20 backdrop-blur-[2px] border border-primary/40 shadow-[0_0_15px_rgba(59,130,246,0.3)] dark:shadow-[0_0_20px_rgba(59,130,246,0.5)] group-hover:border-primary/60 transition-all duration-300" />
+              <div className="relative w-full h-full p-1.5 flex items-center justify-center overflow-hidden rounded-xl">
+                <Image
+                  src="/logo2.png"
+                  alt="I AM CYBER SOLDIER"
+                  width={256}
+                  height={256}
+                  className="w-full h-full object-contain drop-shadow-md"
+                  style={{ imageRendering: '-webkit-optimize-contrast' }}
+                  priority
+                />
+              </div>
+              {/* Animated scanning effect across the logo frame */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:animate-[scan_2s_ease-in-out_infinite] opacity-0 group-hover:opacity-100" />
             </div>
 
             {/* Brand text */}
@@ -168,14 +172,17 @@ export function Navbar() {
           <div className="flex items-center justify-between p-4 border-b border-primary/20 bg-muted/20">
             <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
               <div className="relative w-12 h-12 flex-shrink-0">
-                <Image
-                  src="/logo2.png"
-                  alt="Logo"
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain rounded-xl border border-primary/20"
-                />
-                <div className="absolute inset-0 rounded-xl bg-primary/10 blur-sm -z-10" />
+                <div className="absolute inset-0 rounded-xl bg-primary/10 backdrop-blur-[1px] border border-primary/30 shadow-lg shadow-primary/10" />
+                <div className="relative w-full h-full p-1 flex items-center justify-center">
+                  <Image
+                    src="/logo2.png"
+                    alt="Logo"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-contain"
+                    style={{ imageRendering: '-webkit-optimize-contrast' }}
+                  />
+                </div>
               </div>
               <span className="font-cyber text-base font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
                 I AM CYBER SOLDIER
