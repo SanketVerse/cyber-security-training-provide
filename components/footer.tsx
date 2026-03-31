@@ -29,13 +29,13 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
                 <div className="absolute inset-0 rounded-xl bg-primary/10 backdrop-blur-[1px] border border-primary/20 shadow-lg shadow-primary/5 group-hover:border-primary/40 transition-all" />
-                <div className="relative w-full h-full p-1.5 flex items-center justify-center">
+                <div className="relative w-full h-full p-0.5 flex items-center justify-center">
                   <Image
                     src="/logo2.png"
                     alt="I AM CYBER SOLDIER Logo"
                     width={128}
                     height={128}
-                    className="w-full h-full object-contain"
+                    className="w-[115%] h-[115%] object-contain brightness-110"
                     style={{ imageRendering: '-webkit-optimize-contrast' }}
                   />
                 </div>
