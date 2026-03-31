@@ -57,17 +57,21 @@ export function Navbar() {
         {/* Logo & Brand */}
         <div className="flex lg:flex-1">
           <Link href="/" className="flex items-center gap-3 group">
-            {/* Logo Image Frame */}
+            {/* Logo Image Frame - Professional High-Res Presentation */}
             <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/20 via-cyan-500/10 to-primary/20 backdrop-blur-[2px] border border-primary/40 shadow-[0_0_15px_rgba(59,130,246,0.3)] dark:shadow-[0_0_20px_rgba(59,130,246,0.5)] group-hover:border-primary/60 transition-all duration-300" />
-              <div className="relative w-full h-full p-0.5 flex items-center justify-center overflow-hidden rounded-xl">
+              {/* Outer Glow & Professional Border Frame */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/30 via-cyan-500/10 to-primary/30 backdrop-blur-[4px] border-[1.5px] border-primary/50 shadow-[0_0_20px_rgba(59,130,246,0.25)] group-hover:border-primary/80 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300" />
+              
+              {/* Image Container with precise fitting */}
+              <div className="relative w-full h-full p-1 flex items-center justify-center overflow-hidden rounded-xl">
                 <Image
                   src="/logo2.png"
                   alt="I AM CYBER SOLDIER"
                   width={256}
                   height={256}
-                  className="w-[115%] h-[115%] object-contain drop-shadow-md brightness-110"
-                  style={{ imageRendering: '-webkit-optimize-contrast' }}
+                  unoptimized={true}
+                  className="w-full h-full object-contain drop-shadow-lg scale-110"
+                  style={{ imageRendering: 'crisp-edges' }}
                   priority
                 />
               </div>
@@ -172,15 +176,16 @@ export function Navbar() {
           <div className="flex items-center justify-between p-4 border-b border-primary/20 bg-muted/20">
             <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
               <div className="relative w-12 h-12 flex-shrink-0">
-                <div className="absolute inset-0 rounded-xl bg-primary/10 backdrop-blur-[1px] border border-primary/30 shadow-lg shadow-primary/10" />
-                <div className="relative w-full h-full p-0.5 flex items-center justify-center">
+                <div className="absolute inset-0 rounded-xl bg-primary/20 backdrop-blur-[2px] border-[1.5px] border-primary/40 shadow-xl shadow-primary/10" />
+                <div className="relative w-full h-full p-1 flex items-center justify-center">
                   <Image
                     src="/logo2.png"
                     alt="Logo"
                     width={128}
                     height={128}
-                    className="w-[110%] h-[110%] object-contain"
-                    style={{ imageRendering: '-webkit-optimize-contrast' }}
+                    unoptimized={true}
+                    className="w-full h-full object-contain scale-110"
+                    style={{ imageRendering: 'crisp-edges' }}
                   />
                 </div>
               </div>
