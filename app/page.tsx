@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowRight, ShieldCheck, BrainCircuit, Code2, Users, Zap, BadgeCheck, Lock, Terminal, Network, Shield } from "lucide-react"
+import { ArrowRight, ShieldCheck, BrainCircuit, Code2, Users, Zap, BadgeCheck, Lock, Terminal, Network, Shield, Camera, Cpu } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { FramesOfFame } from "@/components/frames-of-fame"
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -48,6 +49,14 @@ export default function Home() {
   ]
 
   const courses = [
+    {
+      id: "ai-driven-cyber-security",
+      title: "AI-Driven Cyber Security",
+      description: "SOC Analyst Job-Ready Program (L1-L2) with AI-assisted investigation skills.",
+      duration: "20 Hours",
+      level: "Beginner",
+      icon: Cpu,
+    },
     {
       id: 1,
       title: 'Certified Ethical Hacker (CEH)',
@@ -436,12 +445,18 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <Link href="/contact">
-                      <Button className="w-full bg-primary/5 hover:bg-gradient-to-r hover:from-primary hover:to-cyan-500 text-foreground hover:text-white border border-primary/20 hover:border-transparent transition-all duration-300 group/btn">
-                        Contact Trainer
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
+                    <div className="flex gap-3 mt-auto">
+                      <Link href={`/courses/${course.id === 'ai-driven-cyber-security' ? 'ai-driven-cyber-security' : (course.id === 1 ? 'certified-ethical-hacking' : (course.id === 2 ? 'expert-cyber-security' : 'splunk-admin-developer'))}`} className="flex-1">
+                        <Button variant="outline" className="w-full border-primary/20 text-foreground hover:bg-primary/5 transition-all">
+                          Details
+                        </Button>
+                      </Link>
+                      <Link href="/contact" className="flex-1">
+                        <Button className="w-full bg-primary/5 hover:bg-gradient-to-r hover:from-primary hover:to-cyan-500 text-foreground hover:text-white border border-primary/20 hover:border-transparent transition-all duration-300">
+                          Contact
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -462,6 +477,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Frames of Fame Section */}
+      <FramesOfFame />
 
       {/* CTA Section */}
       <section className="relative isolate overflow-hidden py-24 sm:py-32">

@@ -54,13 +54,42 @@ const toolData = [
     ]
   },
   {
-    category: "AI & Modern Stack",
+    category: "AI & Cyber Security Integration",
     icon: Cpu,
     tools: [
-      { name: "Azure Security", level: "Expert", description: "Posture & Compliance" },
-      { name: "AWS Security Hub", level: "Admin", description: "Automation" },
-      { name: "GCP Cloud Armor", level: "Operator", description: "Edge Protection" },
-      { name: "OpenAI API", level: "Prompt Eng.", description: "Security Automation" }
+      { name: "OpenAI / ChatGPT", level: "Prompt Eng.", description: "Security analysis & automation using LLMs" },
+      { name: "Azure Security", level: "Expert", description: "Identity protection & resource compliance" },
+      { name: "AWS Security Hub", level: "Admin", description: "Centralized security posture management" },
+      { name: "GCP Cloud Armor", level: "Operator", description: "DDoS & WAF edge protection" }
+    ]
+  },
+  {
+    category: "GRC & Service Management",
+    icon: Globe,
+    tools: [
+      { name: "Risk Registers", level: "Expert", description: "Tracking & managing organizational security risks" },
+      { name: "Audit Management", level: "Admin", description: "Overseeing compliance with SOC2, HIPAA, GDPR" },
+      { name: "Service Now", level: "Lead", description: "Service management & security operations integration" },
+      { name: "Jira Kanban", level: "Admin", description: "Scaling agile security operations" }
+    ]
+  },
+  {
+    category: "Infrastructure & Data Protection",
+    icon: Lock,
+    tools: [
+      { name: "EDR/NDR", level: "Hunter", description: "Symantec, CrowdStrike, and Network monitoring" },
+      { name: "IAM/PAM", level: "Architect", description: "Identity and Privileged Access Management" },
+      { name: "DLP Solutions", level: "Lead", description: "Data security using CrypTool and Recuva" },
+      { name: "PowerBI", level: "Advanced", description: "Security metric visualization and reporting" }
+    ]
+  },
+  {
+    category: "Operating Systems",
+    icon: Monitor,
+    tools: [
+      { name: "Kali Linux", level: "Expert", description: "Offensive security and penetration testing" },
+      { name: "Ubuntu/Red Hat", level: "Admin", description: "Server hardening and security configuration" },
+      { name: "Windows", level: "Expert", description: "Domain administration and logging systems" }
     ]
   }
 ]

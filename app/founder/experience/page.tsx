@@ -20,38 +20,57 @@ import Link from "next/link"
 
 const experienceData = [
   {
-    role: "Senior Security Consultant",
-    company: "Capgemini",
+    role: "SOC Manager / Cybersecurity Program Manager",
+    company: "Wipro Limited – Global Enterprise Clients, Pune",
+    period: "Jul 2022 – Present",
+    achievements: [
+      "Lead enterprise SOC operations for 10+ global clients across US/EU/APAC including Bank of America and Bayer Pharmaceutical",
+      "Managed massive security teams (40+ members) across multiple locations, ensuring 24x7 coverage",
+      "Supported critical global platforms: FIFA World Cup 2026 Ticketing Systems and Olympic event infrastructure",
+      "Stabilized SOC operations within Q1-Q2 and successfully transitioned to BAU with 50% reduced dependency",
+      "Reduced alert noise by ~60% (from 70/day to 30/day) through advanced use-case tuning",
+      "Designed and built strategic Security Operations Centers (SOC) from scratch for enterprise clients"
+    ]
+  },
+  {
+    role: "Senior Cybersecurity Consultant / Security Manager",
+    company: "Capgemini, Pune",
     period: "Feb 2021 – Jul 2022",
     achievements: [
       "Directed enterprise SIEM deployments (Splunk, MS Sentinel, Securonix, Google Chronicle)",
-      "Integrated T24 and Corporate Banking logs into Splunk, improving detection by 30%",
-      "Reduced false positives by 25% and created 50+ MITRE ATT&CK-aligned use cases"
+      "Conducted risk assessments, gap analysis, and remediation planning for enterprise security",
+      "Designed secure network and infrastructure architectures for large-scale deployments",
+      "Supported IAM/PAM, SOC processes, and developed incident response playbooks"
     ]
   },
   {
     role: "Technical Analyst",
-    company: "Galaxe Solutions",
+    company: "Galaxe Solutions, Hyderabad",
     period: "Jul 2020 – Feb 2021",
     achievements: [
-      "Managed multi-site Splunk indexer clusters and resolved 500+ Jira tickets",
-      "Developed custom Splunk Apps and automated dashboards for security monitoring"
+      "Expert-level SOC monitoring, incident response, SIEM operations, and vulnerability management",
+      "Managed multi-site Splunk indexer clusters and resolved 500+ Jira technical tickets",
+      "Implemented security controls and participated in BCP/DR readiness for enterprise resilience"
     ]
   },
   {
-    role: "Splunk & Cybersecurity Consultant",
-    company: "String Head Technologies",
-    period: "2016 – 2020",
+    role: "Freelance Splunk & Cyber Security Consultant",
+    company: "String Head Technologies, Pune",
+    period: "Feb 2016 – Jul 2020",
     achievements: [
+      "Developed custom Splunk Apps and Add-ons for diverse data source integrations",
+      "Optimized alerts, dashboards, and knowledge objects for elite security visibility",
+      "Consulted on cyber kill chain, threat landscape analysis, and detection strategies",
       "Focused on Data Center High Availability (HA) and automated investigation workflows"
     ]
   },
   {
-    role: "Assistant Professor",
-    company: "Various Engineering Colleges",
-    period: "2010 – 2016",
+    role: "Academic Roles (Lecturer / Assistant Professor)",
+    company: "Various Engineering Institutions",
+    period: "2010 – 2015",
     achievements: [
-      "Academic leadership and teaching in electronics and telecommunication engineering"
+      "Academic leadership and teaching in electronics and telecommunication engineering",
+      "Mentored research projects in digital communication and signal processing"
     ]
   }
 ]

@@ -15,7 +15,8 @@ import {
   Lock,
   Cpu,
   CheckCircle2,
-  ListRestart
+  ListRestart,
+  GraduationCap
 } from "lucide-react"
 import Link from "next/link"
 
@@ -25,6 +26,7 @@ const certificationData = [
     items: [
       { name: "ISACA Certified Information Security Manager (CISM)", issuer: "ISACA", icon: ShieldCheck },
       { name: "(ISC)² Certified in Cybersecurity (CC)", issuer: "(ISC)²", icon: Lock },
+      { name: "Certified Cybersecurity Educator Professional (CCEP)", issuer: "Global Elite", icon: GraduationCap },
       { name: "Red Team Operations Management (CRTOM)", issuer: "Global Red Team", icon: Zap }
     ]
   },

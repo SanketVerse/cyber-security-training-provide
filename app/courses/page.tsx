@@ -3,11 +3,21 @@
 import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Shield, Users, Clock, Database, ShieldCheck, Terminal, Network, Lock, Zap } from "lucide-react"
+import { ArrowRight, ShieldCheck, BrainCircuit, Code2, Users, Zap, BadgeCheck, Lock, Terminal, Network, Shield, Database, LayoutPanelTop, Cpu } from "lucide-react"
 import Link from "next/link"
 
 export default function CoursesPage() {
   const courses = [
+    {
+      id: "ai-driven-cyber-security",
+      title: "AI-Driven Cyber Security",
+      description: "A job-ready program focused on SOC operations with AI assistance. Master real-world incident response and log analysis in 20 hours.",
+      duration: "20 Hours",
+      level: "Beginner",
+      icon: Cpu,
+      price: "Contact Us",
+      modules: 10
+    },
     {
       id: "basic-cyber-security",
       title: "Basic Cyber Security Course",
@@ -40,9 +50,9 @@ export default function CoursesPage() {
     },
     {
       id: "expert-cyber-security",
-      title: "Expert Cyber Security Course",
-      description: "Elite-level training for cybersecurity experts. Learn advanced penetration testing and security architecture.",
-      duration: "5-6 months",
+      title: "Expert Cyber Security & SOC Mastery",
+      description: "Our most comprehensive program combining Ethical Hacking, Splunk SIEM mastery, and SOC Analyst training. Become an elite professional with 80 hours of intensive training.",
+      duration: "80 Hours",
       level: "Expert",
       icon: ShieldCheck,
       price: "Contact Us",

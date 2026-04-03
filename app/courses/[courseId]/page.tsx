@@ -4,11 +4,140 @@ import { notFound } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Clock, Users, BookOpen, Target, CheckCircle, ArrowRight, Phone, Mail, ShieldCheck, Lock, Terminal, Network, Database, Zap } from "lucide-react"
+import { Shield, Clock, Users, BookOpen, Target, CheckCircle, ArrowRight, Phone, Mail, ShieldCheck, Lock, Terminal, Network, Database, Zap, Cpu } from "lucide-react"
 import Link from "next/link"
 
 // Course data with comprehensive details
 const courseData: Record<string, any> = {
+  "ai-driven-cyber-security": {
+    id: "ai-driven-cyber-security",
+    title: "AI-Driven Cyber Security",
+    subtitle: "SOC Analyst Job-Ready Program (L1-L2)",
+    description: "A specialized job-ready program focused on practical SOC Analyst skills assisted by AI. Designed for beginners and career switchers to master log analysis, incident response, and SIEM fundamentals through hands-on labs.",
+    duration: "20 Hours",
+    level: "Beginner",
+    modules: 10,
+    price: "Contact for Pricing",
+    icon: Cpu,
+    features: [
+      "Capstone: End-to-End SOC Incident Handling",
+      "Capstone: AI-Assisted SOC Investigation",
+      "Capstone: Threat Intelligence Use Case",
+      "SOC foundations: Defensive perspective vs IT/NOC",
+      "Core skills: Log analysis and pattern recognition",
+      "Real-world SIEM triage and decision making",
+      "Incident Response lifecycle from detection to closure",
+      "AI-Assisted analysis and investigation",
+      "Threat Intelligence & Hunting for beginners",
+      "Job readiness: Mock SOC shifts and resume positioning",
+      "Live sessions + hands-on labs with real scenarios"
+    ],
+    curriculum: [
+      {
+        module: "Session 1",
+        title: "Introduction to Cyber Security & SOC",
+        topics: [
+          "Defensive perspective of Cyber Security",
+          "SOC vs IT vs NOC roles",
+          "Daily responsibilities of a SOC Analyst",
+          "Log activity mapping and identification"
+        ]
+      },
+      {
+        module: "Session 2",
+        title: "How SOC Works in Real Companies",
+        topics: [
+          "SOC architecture (People, Process, Technology)",
+          "SOC workflow: Logs to Incident Response",
+          "Shift-based operations and documentation",
+          "Escalation hierarchy and SOPs"
+        ]
+      },
+      {
+        module: "Session 3",
+        title: "Logs & Events – Core SOC Skill",
+        topics: [
+          "Understanding log types: Network, App, System",
+          "Event vs Alert vs Incident",
+          "Analyzing raw logs vs human-readable data",
+          "Spotting normal vs suspicious behaviors"
+        ]
+      },
+      {
+        module: "Session 4",
+        title: "Cyber Attacks from SOC Perspective",
+        topics: [
+          "Identifying Brute Force and Credential Abuse",
+          "Malware and Phishing markers in logs",
+          "What SOC can detect vs what SOC cannot",
+          "Log pattern mapping to attack types"
+        ]
+      },
+      {
+        module: "Session 5",
+        title: "SIEM Fundamentals for SOC Analysts",
+        topics: [
+          "SIEM vs Log Server functionality",
+          "Dashboards, alerts, and severity management",
+          "Analyst responsibilities inside SIEM",
+          "Assignments and initial action workflows"
+        ]
+      },
+      {
+        module: "Session 6",
+        title: "Alert Triage & Decision Making",
+        topics: [
+          "Defining True Positives vs False Positives",
+          "Severity vs Priority in triage",
+          "Escalation rules and decision justification",
+          "Analyzing multi-alert scenarios"
+        ]
+      },
+      {
+        module: "Session 7",
+        title: "Incident Handling & Documentation",
+        topics: [
+          "Defining the incident lifecycle",
+          "Incident detection, containment, and closure",
+          "Role of L1 vs L2 in incidents",
+          "Incident reporting and root cause analysis"
+        ]
+      },
+      {
+        module: "Session 8",
+        title: "AI in SOC – AI-Assisted Analysis",
+        topics: [
+          "AI use-cases in security operations",
+          "Responsible AI usage and limitations",
+          "AI-driven log explanation and summaries",
+          "Human-in-the-loop decision making"
+        ]
+      },
+      {
+        module: "Session 9",
+        title: "Threat Intelligence & Hunting",
+        topics: [
+          "Understanding IOCs (IP, URL, Hash rep)",
+          "Contextual analysis vs raw indicators",
+          "Proactive vs reactive monitoring",
+          "Basic threat hunting hypotheses"
+        ]
+      },
+      {
+        module: "Session 10",
+        title: "Job Readiness & Mock SOC Shift",
+        topics: [
+          "Mock SOC shift: Real-time alert handling",
+          "Interview techniques for 'No Experience'",
+          "Resume positioning for SOC roles",
+          "Mock interview and technical review"
+        ]
+      }
+    ],
+    prerequisites: "Basic computer knowledge and passion to start a cybersecurity career. No prior security experience needed.",
+    certification: "AI-Driven Cyber Security Specialist Certificate",
+    placement: "SOC Analyst L1/L2, Security Operator, Junior Forensic Analyst, AI-Security Assistant"
+  },
   "basic-cyber-security": {
     id: "basic-cyber-security",
     title: "Basic Cyber Security Course",
@@ -214,81 +343,211 @@ const courseData: Record<string, any> = {
 
   "expert-cyber-security": {
     id: "expert-cyber-security",
-    title: "Expert Cyber Security Course",
-    subtitle: "Elite Cybersecurity Professional Training",
-    description: "Elite-level training for cybersecurity experts covering advanced penetration testing, security architecture, comprehensive ethical hacking, and professional security operations.",
-    duration: "Expert Level - Contact for Details",
+    title: "Expert Cyber Security & SOC Mastery",
+    subtitle: "Complete Path from Ethical Hacking to SOC Professional",
+    description: "Our most comprehensive program. Master elite-level penetration testing, Splunk administration, and Security Operations Center (SOC) skills. This intensive course transforms you into a professional cybersecurity expert ready for Tier 2/3 SOC roles and senior security consulting.",
+    duration: "80 Hours",
     level: "Expert",
-    modules: 10,
+    modules: 18,
     price: "Contact for Pricing",
     icon: ShieldCheck,
     features: [
       "Advanced Ethical Hacking & Penetration Testing",
       "Professional Footprinting & Reconnaissance",
-      "Expert-level Network Analysis",
-      "Advanced Vulnerability Assessment & Exploitation",
-      "Professional Password Cracking techniques",
-      "Advanced Web Application Security",
-      "Cryptography & Encryption mastery",
-      "Web Server & Application Hacking",
-      "Security Architecture & Controls",
-      "Professional Security Consulting"
+      "Network Fundamentals & Advanced Scanning",
+      "Vulnerability Assessment & Remediation",
+      "Web Application & Server Hacking Mastery",
+      "Splunk Administration & Development",
+      "Advanced Search Processing Language (SPL)",
+      "Interactive Dashboard & Alert Creation",
+      "Comprehensive SOC Operations & Architecture",
+      "Log Analysis & Incident Response Lifecycle"
     ],
     curriculum: [
       {
         module: "Module 1",
         title: "Introduction to Ethical Hacking",
-        topics: ["Information security challenges", "Ethical hacking concepts", "Information security controls and frameworks", "Cybersecurity laws and compliance"]
+        topics: [
+          "Fundamentals of information security world",
+          "Ethical hacking basics and terminology",
+          "Information security controls and frameworks",
+          "Relevant cybersecurity laws and compliance"
+        ]
       },
       {
         module: "Module 2",
-        title: "Footprinting & Reconnaissance",
-        topics: ["Latest techniques and tools for footprinting", "Reconnaissance methodologies (active & passive)", "Understanding the pre-attack phase", "Advanced intelligence gathering"]
+        title: "Foot Printing and Reconnaissance",
+        topics: [
+          "Latest footprinting techniques and tools",
+          "Pre-attack phase of ethical hacking",
+          "Passive and active reconnaissance",
+          "Information gathering strategies"
+        ]
       },
       {
         module: "Module 3",
         title: "Network Fundamentals",
-        topics: ["Network topology & TCP/IP protocols", "Ping sweeps & port scanning with Nmap", "Traffic capture & analysis with Wireshark", "Advanced network security"]
+        topics: [
+          "Basic network topology and TCP/IP protocols",
+          "Ping sweeps and port scanning with Nmap",
+          "Identifying open ports and services",
+          "Analyzing network traffic with Wireshark"
+        ]
       },
       {
         module: "Module 4",
         title: "Vulnerability Assessment",
-        topics: ["Identifying vulnerabilities using scanners", "CVEs (Common Vulnerabilities & Exposures)", "Basic remediation & patching strategies", "Advanced vulnerability analysis"]
+        topics: [
+          "Identifying vulnerabilities using scanners",
+          "Understanding CVEs (Common Vulnerabilities & Exposures)",
+          "CVSS scoring and vulnerability prioritization",
+          "Basic remediation and patching strategies"
+        ]
       },
       {
         module: "Module 5",
         title: "Password Cracking",
-        topics: ["Hands-on with password cracking tools", "Dictionary, Brute Force, Hybrid Attacks", "Identifying and securing weak passwords", "Advanced authentication bypass"]
+        topics: [
+          "Password cracking tools and methodologies",
+          "Dictionary attacks and brute force techniques",
+          "Breaking weak and complex passwords",
+          "Securing password databases and MFA"
+        ]
       },
       {
         module: "Module 6",
         title: "Web Application Security",
-        topics: ["Common vulnerabilities: SQLi, XSS, CSRF", "Web application scanning tools", "Best practices for secure coding & deployment", "Advanced web exploitation"]
+        topics: [
+          "SQL injection, XSS, and CSRF identification",
+          "Using web application scanners (ZAP, Burp)",
+          "Web application security best practices",
+          "OWASP Top 10 vulnerabilities overview"
+        ]
       },
       {
         module: "Module 7",
         title: "Access Control",
-        topics: ["Authentication methods: passwords, MFA", "Role-based access & permission management", "Advanced access control systems", "Identity governance frameworks"]
+        topics: [
+          "Authentication methods: Password, MFA",
+          "Exploring user permission management (IAM)",
+          "Role-based vs Attribute-based access control",
+          "Securing authentication flows"
+        ]
       },
       {
         module: "Module 8",
         title: "Cryptography Basics",
-        topics: ["Symmetric & asymmetric algorithms", "Hands-on encryption & decryption exercises", "Advanced cryptographic protocols", "Cryptographic attack methods"]
+        topics: [
+          "Symmetric and asymmetric encryption algorithms",
+          "Practical encryption/decryption exercises",
+          "Digital signatures and hash functions",
+          "Public Key Infrastructure (PKI) concepts"
+        ]
       },
       {
         module: "Module 9",
         title: "Hacking Web Servers",
-        topics: ["Web server attack techniques & methodologies", "Auditing vulnerabilities in web infrastructures", "Defensive countermeasures & hardening", "Server security architecture"]
+        topics: [
+          "Web server attack methodologies",
+          "Auditing web server infrastructure",
+          "Common server vulnerabilities and exploits",
+          "Defense countermeasures and server hardening"
+        ]
       },
       {
         module: "Module 10",
         title: "Hacking Web Applications",
-        topics: ["Comprehensive web application attack methodology", "Exploiting & auditing application vulnerabilities", "Preventive strategies & countermeasures", "Application security testing"]
+        topics: [
+          "Comprehensive web app attack methodology",
+          "Auditing application vulnerabilities",
+          "Exploiting business logic and session flaws",
+          "Advanced preventive strategies"
+        ]
+      },
+      {
+        module: "Module 11",
+        title: "Splunk Searching",
+        topics: [
+          "Basic searches and search processing language",
+          "Using auto-complete and search time ranges",
+          "Refining searches and using the timeline",
+          "Work with events and save search results"
+        ]
+      },
+      {
+        module: "Module 12",
+        title: "Using Fields in Searching",
+        topics: [
+          "Understanding and identifying Splunk fields",
+          "Using fields in SPL queries",
+          "Search modes: Fast, Verbose, and Smart",
+          "Search sidebar usage and field extraction"
+        ]
+      },
+      {
+        module: "Module 13",
+        title: "Create Reports",
+        topics: [
+          "Saving searches as persistent reports",
+          "Creating statistical reports (Tables)",
+          "Creating visualization-based reports (Charts)",
+          "Editing and managing reports"
+        ]
+      },
+      {
+        module: "Module 14",
+        title: "Create Dashboards",
+        topics: [
+          "Creating and editing Splunk dashboards",
+          "Adding reports and panels to dashboards",
+          "Creating interactive and Cascade dashboards",
+          "Dashboard customization and layout"
+        ]
+      },
+      {
+        module: "Module 15",
+        title: "Creating Alerts",
+        topics: [
+          "Describing and configuring alert types",
+          "Real-time vs Scheduled alert creation",
+          "Viewing fired alerts and notifications",
+          "Alert action automation"
+        ]
+      },
+      {
+        module: "Module 16",
+        title: "Introduction to Cyber Security & SOC",
+        topics: [
+          "Defensive perspective of Cyber Security",
+          "Why companies need SOC (Security Operations Center)",
+          "SOC vs IT vs NOC roles",
+          "Roles in SOC (L1, L2, L3 expectations)"
+        ]
+      },
+      {
+        module: "Module 17",
+        title: "How SOC Works in Real Companies",
+        topics: [
+          "SOC Architecture: People, Process, Technology",
+          "SOC Workflow: Logs -> SIEM -> Alert -> Incident",
+          "Shift-based SOC operations",
+          "Daily responsibilities of an entry-level analyst"
+        ]
+      },
+      {
+        module: "Module 18",
+        title: "Logs & Events – Core SOC Skill",
+        topics: [
+          "Importance of logs in security monitoring",
+          "Log types: Authentication, System, Network, App",
+          "Event vs Alert vs Incident distinction",
+          "Pattern-based vs single log analysis"
+        ]
       }
     ],
-    prerequisites: "Advanced cybersecurity knowledge, networking expertise, and security analysis experience",
-    certification: "Expert Cybersecurity Professional Certificate",
-    placement: "Lead cybersecurity consultant, senior penetration tester, security architect, CISO positions"
+    prerequisites: "Basic computer knowledge and passion for cybersecurity. No prior experience required.",
+    certification: "Expert Cybersecurity & SOC Specialist Certificate",
+    placement: "Tier 1/2 SOC Analyst, Junior Penetration Tester, Security Engineer, Vulnerability Researcher"
   },
 
   "certified-ethical-hacking": {

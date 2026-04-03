@@ -21,7 +21,7 @@ import {
   CheckCircle2,
   ChevronLeft
 } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useRef, useEffect } from "react"
 
 export default function FounderPage() {
   const certifications = [
@@ -57,16 +57,33 @@ export default function FounderPage() {
   ]
 
   const [currentSlide, setCurrentSlide] = useState(0)
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
+      setCanScrollLeft(scrollLeft > 10)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+    }
+  }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % galleryImages.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [galleryImages.length])
+    checkScroll()
+    window.addEventListener("resize", checkScroll)
+    return () => window.removeEventListener("resize", checkScroll)
+  }, [])
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % galleryImages.length)
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
+  const scrollAction = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth * 0.8
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth"
+      })
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -143,10 +160,10 @@ export default function FounderPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                   <p>
-                    With over <span className="text-foreground font-bold">15 years</span> of elite industry experience, Dr. Saraf has spearheaded transformational cyber defense initiatives across Banking, Finance, Telecom, pharmaceutical, and multimedia sectors globally.
+                    With over <span className="text-foreground font-bold">15 years</span> of elite industry experience, Dr. Saraf has spearheaded transformational cyber defense initiatives across Banking, Finance, Telecom, Pharmaceutical, Media, and Sports sectors globally.
                   </p>
                   <p>
-                    He currently serves as a <span className="text-foreground font-bold">Senior Security Consultant</span> specializing in SIEM/SOC engineering, bringing together deep academic research and high-stakes operational expertise.
+                    He currently serves as a <span className="text-foreground font-bold">SOC Manager & Cybersecurity Program Manager</span> at Wipro, overseeing complex security operations for global giants. His portfolio includes securing high-stakes platforms such as <span className="text-foreground font-bold">FIFA World Cup 2026</span> Ticketing Systems and <span className="text-foreground font-bold">Global Olympic</span> event infrastructure.
                   </p>
                 </div>
               </div>
@@ -183,56 +200,64 @@ export default function FounderPage() {
                 </div>
               </div>
               <div className="flex gap-3">
-                <Button variant="outline" size="icon" onClick={prevSlide} className="rounded-xl border-primary/20 hover:bg-primary/10">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  onClick={() => scrollAction("left")} 
+                  disabled={!canScrollLeft}
+                  className="rounded-xl border-primary/20 hover:bg-primary/10 disabled:opacity-30 transition-all"
+                >
                   <ChevronLeft className="h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="icon" onClick={nextSlide} className="rounded-xl border-primary/20 hover:bg-primary/10">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  onClick={() => scrollAction("right")} 
+                  disabled={!canScrollRight}
+                  className="rounded-xl border-primary/20 hover:bg-primary/10 disabled:opacity-30 transition-all"
+                >
                   <ChevronRight className="h-5 w-5" />
                 </Button>
               </div>
             </div>
 
-            <div className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-3xl border border-primary/20 shadow-2xl shadow-primary/10">
+            <div 
+              ref={scrollRef}
+              onScroll={checkScroll}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 transition-all"
+              style={{ 
+                  scrollbarWidth: 'none', 
+                  msOverflowStyle: 'none',
+                  WebkitOverflowScrolling: 'touch'
+              }}
+            >
               {galleryImages.map((img, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-                  }`}
+                  className="relative min-w-[85vw] md:min-w-[70%] aspect-[16/10] md:aspect-[21/9] rounded-3xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 snap-center group"
                 >
                   <Image
                     src={img.src}
                     alt={img.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
                     priority={index === 0}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-8 md:p-12">
-                     <Badge className="mb-4 bg-primary/20 text-primary border-primary/30 font-cyber font-bold tracking-widest px-4 py-1">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  
+                  <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                     <Badge className="mb-4 bg-primary/20 text-primary border-primary/30 font-cyber font-bold tracking-widest px-3 py-1 text-[10px]">
                         LIVE IMPACT SESSION
                      </Badge>
-                     <h3 className="text-3xl md:text-5xl font-bold text-white mb-2">{img.title}</h3>
-                     <div className="flex items-center gap-2 text-primary/80 font-medium">
-                        <Zap className="h-4 w-4" />
+                     <h3 className="text-xl md:text-3xl font-bold text-white mb-2">{img.title}</h3>
+                     <div className="flex items-center gap-2 text-primary/80 font-medium text-xs md:text-sm">
+                        <Zap className="h-3 w-3" />
                         <span>Empowering Global Talent with Cyber-Secure Academy</span>
                      </div>
                   </div>
                 </div>
               ))}
-              
-              {/* Progress Dots */}
-              <div className="absolute bottom-8 right-8 z-20 flex gap-2">
-                {galleryImages.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentSlide(i)}
-                    className={`h-1.5 transition-all duration-300 rounded-full ${
-                      i === currentSlide ? "w-8 bg-primary" : "w-2 bg-white/30"
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
           

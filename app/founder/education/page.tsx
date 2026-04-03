@@ -19,30 +19,30 @@ import Link from "next/link"
 const educationData = [
   {
     degree: "Ph.D. in Cyber Security",
-    institution: "D. Y. Patil College of Engineering, Pune",
-    period: "Dec 2024",
-    description: "Doctoral research focused on advanced cryptographic techniques and SIEM-based threat intelligence.",
-    highlights: ["Qualified PhD entrance in 4 leading universities", "Focus on advanced Cyber Security frameworks"],
+    institution: "D. Y. Patil College of Engineering, Akurdi, Pune",
+    period: "2018 – 2024",
+    description: "Doctoral research focused on advanced cryptographic techniques and SIEM-based threat intelligence in large-scale enterprise environments.",
+    highlights: ["Doctorate in Cyber Security", "Focus on advanced Cyber Security frameworks and SIEM"],
     icon: GraduationCap,
-    category: "Final Year Doctoral"
+    category: "Ph.D. Scholar"
   },
   {
     degree: "M.E. in Electronics and Telecommunication",
-    institution: "K.K Wagh Institute",
-    period: "Master Level",
-    description: "Specialization in digital communication systems and advanced signal processing.",
-    highlights: ["Academic excellence with 7.83 CGPA", "Expertise in telecommunication protocols"],
+    institution: "K.K. Wagh COE, Nasik",
+    period: "2011 – 2013",
+    description: "Specialization in digital communication systems and advanced signal processing with focus on secure protocols.",
+    highlights: ["Academic excellence in Engineering", "Specialized in secure telecommunication"],
     icon: School,
-    category: "Master of Engineering"
+    category: "Master's Degree"
   },
   {
     degree: "B.E. in Electronics Engineering",
     institution: "S.S.V.P.S’s COE, Dhule",
-    period: "Undergraduate Level",
-    description: "Foundational engineering studies with top academic honors.",
-    highlights: ["Achieved 2nd Rank in University merit lists", "Graduated with 72.60% (Distinction)"],
+    period: "2006 – 2010",
+    description: "Foundational engineering studies with top academic honors from the university.",
+    highlights: ["University Rank Holder (Merit List)", "Graduated with Distinction honors"],
     icon: BookText,
-    category: "Bachelor of Engineering"
+    category: "Bachelor's Degree"
   }
 ]
 

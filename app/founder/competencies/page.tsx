@@ -45,6 +45,13 @@ const competencyData = [
     skills: ["Vulnerability Assessment (Nessus)", "Penetration Testing (BurpSuite, Metasploit)", "Red Team operations management", "Security audit and reporting"],
     color: "from-primary/20 to-blue-500/20",
     textColor: "text-blue-400"
+  },
+  {
+    title: "Leadership & Soft Skills",
+    icon: Zap,
+    skills: ["Strategic thinking & Risk-based decision making", "Large-team leadership (40+ members)", "Executive communication & Stakeholder engagement", "Crisis management & Resilience planning", "Cross-functional collaboration (OT/IT/Business)"],
+    color: "from-yellow-400/20 to-primary/20",
+    textColor: "text-yellow-400"
   }
 ]
 
